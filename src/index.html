@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Blood sugar analyzer</title>
+
+	<link rel="stylesheet" href="http://cdn.webix.io/edge/webix.css" type="text/css" media="screen" charset="utf-8">
+	<script src="http://cdn.webix.io/edge/webix.js" type="text/javascript" charset="UTF-8"></script>
+	<script>
+      var multiple_dataset = [
+        {sales : '183', sales2 : '155', sales3 : '243', year : '01', desc : '아침:7시반, 점심:순대국, 저녁:김치볶음밥'},
+        {sales : '201', sales2 : '190', sales3 : '187', year : '02', desc : '아침:11시, 점심:현미+참치, 저녁:치킨+피자1조각+망고주스'},
+        {sales : '189', sales2 : '143', sales3 : '261', year : '03', desc : '아침:12시, 점심:시리얼, 저녁:김치찌개+반공기'},
+        {sales : '181', sales2 : '214', sales3 : '151', year : '04', desc : '아침:9시, 점심:매운돈가스, 저녁:된장찌개+1/3공기'},
+        {sales : '158', sales2 : '0', sales3 : '0', year : '05', desc : '야식:시리얼, 아침:9시, 점심:탕볶밥, 저녁:'},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '06', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '07', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '08', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '09', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '10', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '11', desc : ''},
+
+        {sales : '0', sales2 : '0', sales3 : '0', year : '12', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '13', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '14', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '15', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '16', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '17', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '18', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '19', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '20', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '21', desc : ''},
+
+        {sales : '0', sales2 : '0', sales3 : '0', year : '22', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '23', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '24', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '25', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '26', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '27', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '28', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '29', desc : ''},
+        {sales : '0', sales2 : '0', sales3 : '0', year : '30', desc : ''}
+      ]
+	</script>
+</head>
+<body>
+<script>
+  webix.ui.fullScreen();
+  webix.ui({
+    view : 'chart',
+    type : 'line',
+    preset : 'plot',
+    xAxis : {
+      template : '#year#'
+    },
+    yAxis : {
+      start : 80,
+      step : 20,
+      end : 300
+    },
+    legend : {
+      values : [{text : '아침'}, {text : '식전'}, {text : '식후'}],
+      align : 'center',
+      valign : 'bottom',
+      layout : 'x',
+      width : 100,
+      margin : 8,
+      marker : {
+        type : 'item',
+        width : 18
+      }
+    },
+    series : [
+      {
+        value : '#sales#',
+        label : '#sales#',
+        item : {
+          borderColor : '#447900',
+          color : '#69ba00'
+        },
+        line : {
+          color : '#69ba00',
+          width : 2
+        },
+        tooltip : {
+          template : '#sales#'
+        }
+      },
+      {
+        value : '#sales2#',
+        label : '#sales2#',
+        item : {
+          borderColor : '#0a796a',
+          color : '#4aa397',
+          type : 's',
+          radius : 4
+        },
+        line : {
+          color : '#4aa397',
+          width : 2
+        },
+        tooltip : {
+          template : '#sales2#'
+        }
+      },
+      {
+        value : '#sales3#',
+        label : '#sales3#',
+        item : {
+          borderColor : '#b7286c',
+          color : '#de619c',
+          type : 't',
+          radius : 4
+        },
+        line : {
+          color : '#de619c',
+          width : 2
+        },
+        tooltip : {
+          template : '#sales3#'
+        }
+      }
+    ],
+    data : multiple_dataset
+  });
+</script>
+</body>
+</html>
